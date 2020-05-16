@@ -33,6 +33,13 @@ echo "update mysql.user set plugin='mysql_native_password' where user='root';" |
 echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password
 mysql wordpress -u root --skip-password < /var/wordpress.sql
 
+
+#manage auto index
+if [ $INDEX_AUTO = off ]
+then
+	sed -i 's/autoindex on/autoindex off/' /etc/nginx/sites-enabled/localhost
+fi
+
 #start services
 service php7.3-fpm start
 service nginx start

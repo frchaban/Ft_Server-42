@@ -36,5 +36,5 @@ CMD bash ./initialisation.sh
 EXPOSE 80 443
 
 #variable env
-ENV INDEX_AUTO=on
+ENV INDEX_AUTO on
 #docker run -tid -p 80:80 -p 443:443 --name NAME IMAGE (-e INDEX_AUTO=0 if you want to desactivate index auto)
